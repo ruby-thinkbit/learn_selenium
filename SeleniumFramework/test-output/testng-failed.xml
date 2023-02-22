@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <parameter name="browserName" value="chrome"/>
+  <listeners>
+    <listener class-name="TestNGListenersDemo.TestNGListeners"/>
+  </listeners>
+  <test thread-count="5" parallel="tests" name="Test(failed)">
+    <groups>
+      <run>
+        <include name="setup"/>
+        <include name="sanity"/>
+        <include name="smoke"/>
+        <exclude name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="TestNGListenersDemo.TestNGListenerDemo">
+        <methods>
+          <include name="demo1test3"/>
+        </methods>
+      </class> <!-- TestNGListenersDemo.TestNGListenerDemo -->
+      <class name="TestNGListenersDemo.TestNGListenerDemo2">
+        <methods>
+          <include name="Setup_Test"/>
+          <include name="input_text"/>
+          <include name="go_to_url"/>
+          <include name="Close_Setup"/>
+          <include name="search_input"/>
+        </methods>
+      </class> <!-- TestNGListenersDemo.TestNGListenerDemo2 -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

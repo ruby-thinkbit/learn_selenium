@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Suite">
+	<parameter name="browserName" value="chrome"></parameter>
+	<listeners>
+		<listener class-name="TestNGListenersDemo.TestNGListeners"></listener>
+	</listeners>
+ 	<test thread-count="5" parallel="tests" name="Test">
+		<groups>
+			<run>
+				<include name="setup"></include>
+				<include name="sanity"></include>
+				<include name="smoke"></include>
+				<exclude name="regression"></exclude>
+			</run>
+		</groups>
+    	<packages>
+      		<package name="TestNGListenersDemo"/>
+    	</packages>
+  	</test> <!-- Test -->
+</suite> <!-- Suite -->
